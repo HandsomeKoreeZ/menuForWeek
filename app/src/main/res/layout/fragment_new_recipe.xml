@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment_NewRecipe"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+
+
+        <EditText
+            android:id="@+id/editTextRecipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/newRecipeNameHint"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/newRecipeNameHint" />
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_categoryCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextRecipeName"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:baselineAligned="false" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBox_meat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_meat" />
+
+            <CheckBox
+                android:id="@+id/checkBox_fish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_fish" />
+
+            <CheckBox
+                android:id="@+id/checkBox_salad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_salad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBox_garnish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_garnish" />
+
+            <CheckBox
+                android:id="@+id/checkBox_breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_breakfast" />
+
+            <CheckBox
+                android:id="@+id/checkBox_dessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_dessert" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBox_mainPlate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_mainPlate" />
+
+            <CheckBox
+                android:id="@+id/checkBox_soup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_soup" />
+
+            <CheckBox
+                android:id="@+id/checkBox_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_other" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_componentsList"
+        android:layout_below="@id/linearLayout_categoryCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:baselineAligned="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/newComponentHint"
+                android:inputType="textPersonName"
+                android:gravity="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/newComponentVolumeHint"
+                android:inputType="textPersonName"
+                android:gravity="center"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#0000"
+                android:text="@string/symbol_plus"
+                android:textColor="#226A00"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#0000"
+                android:gravity="center"
+                android:text="@string/symbol_minus"
+                android:textColor="#D10E00"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>
