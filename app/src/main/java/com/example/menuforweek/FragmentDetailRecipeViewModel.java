@@ -1,7 +1,10 @@
 package com.example.menuforweek;
 
 import android.arch.lifecycle.ViewModel;
+import android.widget.LinearLayout;
 
-public class FragmentNewRecipeViewModel extends ViewModel {
+public class FragmentDetailRecipeViewModel extends ViewModel {
     // TODO: Implement the ViewModel
+
+
 }

@@ -5,27 +5,44 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment_NewRecipe"
+    tools:context=".Fragment_DetailRecipe"
     android:layout_margin="@dimen/activity_horizontal_margin">
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout_recipeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/actiity_default_padding">
         <EditText
             android:id="@+id/editTextRecipeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight=".9"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_centerHorizontal="true"
             android:hint="@string/newRecipeNameHint"
             android:inputType="textPersonName"
             android:autofillHints="@string/newRecipeNameHint" />
 
+
+        <Button
+            android:id="@+id/buttonSaveRecipe"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight=".1"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/button_back"
+            android:drawableEnd="@android:drawable/ic_menu_save" />
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/linearLayout_categoryCheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextRecipeName"
+        android:layout_below="@id/linearLayout_recipeName"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -107,57 +124,75 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/LinearLayout_componentsList"
+    <EditText
+        android:id="@+id/editTextRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_below="@id/linearLayout_categoryCheckBox"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/actiity_default_padding"
+        android:background="@drawable/edittext_background"
+        android:gravity="start"
+        android:hint="@string/newRecipe"
+        android:inputType="textMultiLine"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView_componentsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:baselineAligned="false" >
+        android:layout_below="@+id/editTextRecipe"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="end">
-
-            <EditText
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearLayout_componentsList"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/newComponentHint"
-                android:inputType="textPersonName"
-                android:gravity="center"
-                android:textSize="16sp" />
+                android:baselineAligned="false"
+                android:orientation="vertical">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/newComponentVolumeHint"
-                android:inputType="textPersonName"
-                android:gravity="center"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#0000"
-                android:text="@string/symbol_plus"
-                android:textColor="#226A00"
-                android:textSize="24sp" />
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#0000"
-                android:gravity="center"
-                android:text="@string/symbol_minus"
-                android:textColor="#D10E00"
-                android:textSize="24sp" />
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
 
 
 
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="@string/newComponentHint"
+                        android:inputType="textPersonName"
+                        android:layout_weight=".5"
+                        android:textSize="16sp" />
 
-    </LinearLayout>
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:hint="@string/newComponentVolumeHint"
+                        android:inputType="textPersonName"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/p1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/button_back"
+                        android:gravity="center"
+                        android:text="@string/symbol_plus"
+                        android:textColor="#226A00"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
+
+
+
+
 </RelativeLayout>
