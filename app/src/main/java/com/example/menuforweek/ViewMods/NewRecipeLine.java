@@ -56,7 +56,7 @@ public class NewRecipeLine extends LinearLayout{
         Button bb = new Button(context);
         bb.setLayoutParams(new LinearLayout.LayoutParams(dp40,dp40));
         bb.setText(text);
-        bb.setBackgroundColor(getResources().getColor(R.color.button_back,null));
+        bb.setBackgroundColor(getResources().getColor(R.color.transparent,null));
         bb.setTextColor(color);
         bb.setGravity(Gravity.CENTER);
         bb.setTextSize(24);

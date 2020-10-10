@@ -32,7 +32,7 @@
             android:layout_height="50dp"
             android:layout_weight=".1"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@color/button_back"
+            android:background="@color/transparent"
             android:drawableEnd="@android:drawable/ic_menu_save" />
 
     </LinearLayout>
@@ -182,7 +182,7 @@
                         android:id="@+id/p1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@color/button_back"
+                        android:background="@color/transparent"
                         android:gravity="center"
                         android:text="@string/symbol_plus"
                         android:textColor="#226A00"

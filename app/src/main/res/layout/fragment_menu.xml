@@ -1,13 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_Menu">
+    tools:context=".Fragment_Menu"
+    android:layout_margin="@dimen/activity_horizontal_margin">
 
-    <TextView
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="menu menushka" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:background="@drawable/menu_days_delimiter">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/zavMON"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/zavtrak"
+                android:layout_weight="0.13"
+                android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/obMON"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/obed"
+                android:layout_weight="0.13"
+                android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/uzhMMON"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/uzhin"
+                android:layout_weight="0.13"
+                android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/desMON"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/desert"
+                android:layout_weight="0.13"
+                android:gravity="center_horizontal|center_vertical"/>
+            <TextView
+                android:id="@+id/rabMON"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/rabota"
+                android:layout_weight="0.13"
+                android:gravity="center_horizontal|center_vertical"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/mon"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter">
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13">
+
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
