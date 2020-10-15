@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment_DetailRecipe"
+    tools:context=".Fragments.Fragment_detail_recipe"
     android:layout_margin="@dimen/activity_horizontal_margin">
 
 

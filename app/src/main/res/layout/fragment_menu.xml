@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_Menu"
+    tools:context=".Fragments.Fragment_menu"
     android:layout_margin="@dimen/activity_horizontal_margin">
 
 
@@ -79,12 +79,13 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/zavMON"
+                    android:id="@+id/zavMON1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/menu_cell_border"
                     android:layout_weight="0.5" />
                 <TextView
+                    android:id="@+id/zavMON2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/menu_cell_border"
@@ -98,32 +99,13 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/obMON"
+                    android:id="@+id/obMON1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/menu_cell_border"/>
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/menu_cell_border"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.13"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/uzhMMON"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/menu_cell_border"/>
-                <TextView
+                    android:id="@+id/obMON2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
@@ -138,12 +120,13 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/desMON"
+                    android:id="@+id/uzhMON1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/menu_cell_border"/>
                 <TextView
+                    android:id="@+id/uzhMON2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
@@ -158,12 +141,34 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/rabMON"
+                    android:id="@+id/desMON1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/menu_cell_border"/>
                 <TextView
+                    android:id="@+id/desMON2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabMON1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabMON2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
@@ -178,7 +183,123 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.13"
-            android:background="@drawable/menu_days_delimiter">
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/tue"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavTUE1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"
+                    android:gravity="center_horizontal|center_vertical" />
+                <TextView
+                    android:id="@+id/zavTUE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obTUE1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obTUE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhTUE1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhTUE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desTUE1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desTUE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabTUE1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabTUE2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+
 
 
         </TableRow>
@@ -186,35 +307,605 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.13">
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/wed"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavWED1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/zavWED2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obWED1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obWED2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhWED1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhWED2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desWED1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desWED2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabWED1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabWED2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.13">
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/thu"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavTHU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/zavTHU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obTHU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obTHU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhTHU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhTHU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desTHU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desTHU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabTHU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabTHU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.13">
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/fri"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavFRI1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/zavFRI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obFRI1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obFRI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhFRI1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhFRI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desFRI1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desFRI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabFRI1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabFRI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.13">
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/sat"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavSAT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/zavSAT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obSAT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obSAT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhSAT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhSAT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desSAT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desSAT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabSAT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabSAT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.13">
+            android:layout_weight="0.13"
+            android:background="@drawable/menu_days_delimiter"
+            android:layout_marginBottom="@dimen/actiity_default_padding"
+            android:paddingBottom="@dimen/actiity_default_padding">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/sun"
+                android:layout_weight="0.1"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zavSUN1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/zavSUN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_cell_border"
+                    android:layout_weight="0.5"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/obSUN1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/obSUN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uzhSUN1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/uzhSUN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/desSUN1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/desSUN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rabSUN1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+                <TextView
+                    android:id="@+id/rabSUN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/menu_cell_border"/>
+
+            </LinearLayout>
 
         </TableRow>
     </TableLayout>
