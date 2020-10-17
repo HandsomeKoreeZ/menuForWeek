@@ -8,26 +8,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.menuforweek.Interface.ProductTab;
 import com.example.menuforweek.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_ProductDaysTab#newInstance} factory method to
+ * Use the {@link Fragment_recipes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_ProductDaysTab extends Fragment {
+public class Fragment_recipes extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    public static final String ARG_PARAM1 = "param1";
-    public static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public Fragment_ProductDaysTab() {
+    public Fragment_recipes() {
         // Required empty public constructor
     }
 
@@ -37,11 +36,11 @@ public class Fragment_ProductDaysTab extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_ProductDaysTab.
+     * @return A new instance of fragment Fragment_recipes.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_ProductDaysTab newInstance(String param1, String param2) {
-        Fragment_ProductDaysTab fragment = new Fragment_ProductDaysTab();
+    public static Fragment_recipes newInstance(String param1, String param2) {
+        Fragment_recipes fragment = new Fragment_recipes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,6 +61,6 @@ public class Fragment_ProductDaysTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__product_days_tab, container, false);
+        return inflater.inflate(R.layout.fragment_recipes, container, false);
     }
 }

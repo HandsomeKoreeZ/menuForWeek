@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.menuforweek.Fragments.*;
-import com.example.menuforweek.Interface.*;
 
 public class ProductList_Adapter extends FragmentStatePagerAdapter {
     public ProductList_Adapter(FragmentManager fm) {
@@ -18,7 +17,7 @@ public class ProductList_Adapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int i) {
-        Fragment fragment = (i==1)?new Fragment_productAllTab():new Fragment_ProductDaysTab();
+        Fragment fragment = (i==1)?new Fragment_productAllTab():new Fragment_productDaysTab();
         Bundle args = new Bundle();
 
         // тут будет закидываться список продуктов одним объектом

@@ -10,7 +10,7 @@ import com.example.menuforweek.Fragments.*;
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_cook:
                     setTitle(R.string.title_cook);
+                    fm.beginTransaction().replace(R.id.main_frame, new Fragment_recipes()).commit();
                     findViewById(R.id.main_frame).setBackgroundResource(R.color.color_coock);
                     return true;
                 case R.id.navigation_product_price:
