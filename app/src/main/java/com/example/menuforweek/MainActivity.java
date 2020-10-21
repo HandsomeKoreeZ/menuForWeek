@@ -1,6 +1,9 @@
 package com.example.menuforweek;
 
 import android.os.Bundle;
+
+import com.example.menuforweek.Database.DBAdapter;
+import com.example.menuforweek.Database.DBHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fm = getSupportFragmentManager();
+        DBAdapter base = DBAdapter.getInstance();                                               //database instance
+        base.setBase(new DBHelper(this));
 
         navView.setSelectedItemId(R.id.navigation_menu_list);                                       //set start activity
     }

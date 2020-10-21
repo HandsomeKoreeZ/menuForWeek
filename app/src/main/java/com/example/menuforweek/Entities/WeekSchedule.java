@@ -17,4 +17,5 @@ public class WeekSchedule implements Serializable {
     public DAY getDAY(int pos){
         return schedule[pos];
     }
+
 }
