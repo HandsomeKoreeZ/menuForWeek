@@ -1,9 +1,8 @@
-package com.example.menuforweek.ViewMods;
+package com.example.menuforweek.ViewModification;
 
 import android.content.Context;
 import android.text.InputType;
 import android.view.Gravity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,6 @@ import android.widget.LinearLayout;
 
 import com.example.menuforweek.R;
 import com.example.menuforweek.Service.minusComponentLineListener;
-import com.example.menuforweek.Service.plusConponentLineListener;
 
 
 public class NewRecipeLine extends LinearLayout{

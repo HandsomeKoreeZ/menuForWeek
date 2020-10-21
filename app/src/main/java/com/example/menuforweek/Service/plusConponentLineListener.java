@@ -6,7 +6,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 import com.example.menuforweek.R;
-import com.example.menuforweek.ViewMods.*;
+import com.example.menuforweek.ViewModification.*;
 
 
 public class plusConponentLineListener implements View.OnClickListener {

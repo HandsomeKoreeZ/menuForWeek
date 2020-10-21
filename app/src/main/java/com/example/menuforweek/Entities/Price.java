@@ -2,14 +2,10 @@ package com.example.menuforweek.Entities;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
-
+public class Price implements Serializable {
     private int id;
-    private int categoryID;
+    private int prodID;
     private int volID;
-    private String name;
-
-
-
-
+    private int volume;
+    private int value;
 }

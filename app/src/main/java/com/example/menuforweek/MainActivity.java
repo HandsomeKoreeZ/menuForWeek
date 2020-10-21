@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_product_price:
                     setTitle(R.string.title_product_price);
+                    fm.beginTransaction().replace(R.id.main_frame, new Fragment_price()).commit();
                     findViewById(R.id.main_frame).setBackgroundResource(R.color.color_productPrice);
                     return true;
             }
