@@ -4,12 +4,12 @@ import com.example.menuforweek.Interface.Period;
 
 import java.io.Serializable;
 
-class DAY implements Serializable {
+public class DayShedule implements Serializable {
 
     private int id;
     private Period[] dayschedule;
 
-    public DAY() {}
+    public DayShedule() {}
 
     public int getId() {
         return id;

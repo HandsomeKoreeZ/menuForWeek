@@ -90,15 +90,6 @@ public class DBFillers {
         cv = new ContentValues();
         cv.put(DBConst.COL_NAME,"Напитки");
         categories.add(cv);
-        cv = new ContentValues();
-        cv.put(DBConst.COL_NAME,"");
-        categories.add(cv);
-        cv = new ContentValues();
-        cv.put(DBConst.COL_NAME,"");
-        categories.add(cv);
-        cv = new ContentValues();
-        cv.put(DBConst.COL_NAME,"");
-        categories.add(cv);
 
         return  categories;
     }

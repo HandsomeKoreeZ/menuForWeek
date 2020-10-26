@@ -66,7 +66,7 @@ public class Fragment_ProductList extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment__product_list, container, false);
+        View v = inflater.inflate(R.layout.fragment_product_list, container, false);
         TabLayout tl = v.findViewById(R.id.tablayout_productList);
         ProductList_Adapter adapter = new ProductList_Adapter(getFragmentManager());
         pager = v.findViewById(R.id.viewpager_productList);

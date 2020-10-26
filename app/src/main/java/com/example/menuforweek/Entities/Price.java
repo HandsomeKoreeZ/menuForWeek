@@ -2,18 +2,23 @@ package com.example.menuforweek.Entities;
 
 import java.io.Serializable;
 
+/**
+ * показывае цену за еденицу объёма.
+ * тип объёма берёт из предоставленного продукта.
+ */
+
 public class Price implements Serializable {
     private int id;
-    private Product prod;
+    private Product_raw prod;
     private String volType;
     private int volume;
     private Double value;
 
     public Price() {}
 
-    public Price(Product prod, String volType, int volume, Double value) {
+    public Price(Product_raw prod, int volume, Double value) {
         this.prod = prod;
-        this.volType = volType;
+        this.volType = prod.getVolType();
         this.volume = volume;
         this.value = value;
     }
@@ -26,11 +31,11 @@ public class Price implements Serializable {
         this.id = id;
     }
 
-    public Product getProd() {
+    public Product_raw getProd() {
         return prod;
     }
 
-    public void setProd(Product prod) {
+    public void setProd(Product_raw prod) {
         this.prod = prod;
     }
 

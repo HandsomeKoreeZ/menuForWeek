@@ -35,8 +35,8 @@ public class ProductList_Adapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "days";
+            return "По дням недели";
         }
-        return "all";
+        return "Весь список";
     }
 }
