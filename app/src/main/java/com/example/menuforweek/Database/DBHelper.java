@@ -44,10 +44,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void initialize(){
         SQLiteDatabase db = this.getWritableDatabase();
-        DBFillers.productCategoryList().forEach((ContentValues cv)->{db.insert(DBConst.TAB_PROD_CAT,null,cv);});
-        DBFillers.mealPeriodList().forEach((ContentValues cv)->{db.insert(DBConst.TAB_PROD_CAT,null,cv);});
-        DBFillers.volumeCategoriesList().forEach((ContentValues cv)->{db.insert(DBConst.TAB_PROD_CAT,null,cv);});
-        DBFillers.recipeCategoryList().forEach((ContentValues cv)->{db.insert(DBConst.TAB_PROD_CAT,null,cv);});
+        DBFillers.productCategoryList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
+        DBFillers.mealPeriodList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
+        DBFillers.volumeCategoriesList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
+        DBFillers.recipeCategoryList().forEach((ContentValues cv)-> db.insert(DBConst.TAB_PROD_CAT,null,cv));
     }
 
 
@@ -98,8 +98,8 @@ public class DBHelper extends SQLiteOpenHelper {
         int catID = getIDfrom(DBConst.TAB_PROD_CAT, product.getProdCategory());
         ContentValues cv = new ContentValues();
         cv.put(DBConst.COL_NAME,name);
-        cv.put(DBConst.COL_VOL_ID,name);
-        cv.put(DBConst.COL_CAT_ID,name);
+        cv.put(DBConst.COL_VOL_ID,volID);
+        cv.put(DBConst.COL_CAT_ID,catID);
         db.insert(DBConst.TAB_PROD,null,cv);
         db.close();
     }
@@ -130,6 +130,7 @@ public class DBHelper extends SQLiteOpenHelper {
             product.setProdCategory(getTextFrom(DBConst.TAB_PROD_CAT, DBConst.COL_NAME, id_cat));
             product.setVolType(getTextFrom(DBConst.TAB_VOL,DBConst.COL_NAME, id_vol));
         } catch (Exception e) {
+            System.out.println("------------------------------------------> doesn't exist product");
         }
         return product;
     }
@@ -154,18 +155,16 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
 
         //insert all products to the details
-        recipe.getDetails().forEach((prod)->{ setProductToDetail(id_rec,prod,db);});
+        recipe.getDetails().forEach((prod)-> setProductToDetail(id_rec,prod,db));
 
         //insert all categories that indicated
-        recipe.getCategories().forEach((cat)->{setCategoryOfRecipe(id_rec,getIDfrom(DBConst.TAB_REC_CATEGORY,cat),db);});
+        recipe.getCategories().forEach((cat)-> setCategoryOfRecipe(id_rec,getIDfrom(DBConst.TAB_REC_CATEGORY,cat),db));
         db.close();
 
     }
 
     public Recipe getRecipe(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<Product> products = new ArrayList<>();
-        ArrayList<String> categories = new ArrayList<>();
         Recipe recipe = new Recipe();
         recipe.setId(id);
         recipe.setName(getTextFrom(DBConst.TAB_RECIPE, DBConst.COL_NAME, id));
@@ -192,6 +191,7 @@ public class DBHelper extends SQLiteOpenHelper {
             idcat = cursor.getInt(cursor.getColumnIndex(DBConst.COL_CAT_ID));
             recipe.addCategory(getTextFrom(DBConst.TAB_REC_CATEGORY,DBConst.COL_NAME,idcat));
         }while(cursor.moveToNext());
+        cursor.close();
 
         return recipe;
     }
@@ -223,7 +223,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public DayShedule getDay(int id){
 
     }
-
 
 
 

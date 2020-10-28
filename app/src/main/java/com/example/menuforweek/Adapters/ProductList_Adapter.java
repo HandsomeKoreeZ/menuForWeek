@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.menuforweek.Database.DBAdapter;
 import com.example.menuforweek.Fragments.*;
 
 public class ProductList_Adapter extends FragmentStatePagerAdapter {
     public ProductList_Adapter(FragmentManager fm) {
         super(fm);
     }
+    DBAdapter base = DBAdapter.getInstance();
 
     @NonNull
     @Override
