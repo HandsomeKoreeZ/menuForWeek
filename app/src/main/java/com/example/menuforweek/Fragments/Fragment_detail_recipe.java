@@ -5,10 +5,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
+import com.example.menuforweek.Database.DBAdapter;
 import com.example.menuforweek.R;
+import com.example.menuforweek.Service.VolumeSpinnerListener;
 import com.example.menuforweek.Service.plusConponentLineListener;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,8 @@ public class Fragment_detail_recipe extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Spinner spinner;
+    DBAdapter db;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -51,6 +59,7 @@ public class Fragment_detail_recipe extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = DBAdapter.getInstance();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -62,9 +71,18 @@ public class Fragment_detail_recipe extends Fragment {
                              Bundle savedInstanceState) {
         View obs = inflater.inflate(R.layout.fragment_detail_recipe, container, false);
 
-        //добавляю лиснер для добавления новых линий
+        //поиск нужных вьюшек
         LinearLayout parentLL = obs.findViewById(R.id.linearLayout_componentsList);
         LinearLayout subLL = obs.findViewById(R.id.ll1);
+        spinner = obs.findViewById(R.id.volSpinner1);
+
+        //настройка спиннера
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()),android.R.layout.simple_spinner_item,  db.getVolumeTypeList());
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new VolumeSpinnerListener());
+
+        //добавляю лиснер для добавления новых линий
         View.OnClickListener clickPlus = new plusConponentLineListener(getContext(),parentLL);
         //minusComponentLineListener clickMinus = new minusComponentLineListener(getContext(),parentLL, subLL);
 

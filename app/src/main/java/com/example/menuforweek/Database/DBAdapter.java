@@ -2,6 +2,10 @@ package com.example.menuforweek.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBAdapter {
     private static DBAdapter adapter;
@@ -19,6 +23,10 @@ public class DBAdapter {
         db = base;
     }
  ///////////////////////////////////////////////////////////////////////////////////
+    public List<String> getVolumeTypeList(){
+        return DBFillers.getListVolumeCategories();
+
+    }
 
 
 }
