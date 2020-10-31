@@ -1,13 +1,11 @@
 package com.example.menuforweek.Entities;
 
-import com.example.menuforweek.Interface.Period;
 import com.example.menuforweek.Interface.Product;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Recipe implements Serializable, Period {
+public class Recipe implements Serializable {
 
     private int id;
     private String name;
@@ -15,7 +13,7 @@ public class Recipe implements Serializable, Period {
     private ArrayList<String> category;
     private String text;
 
-    public Recipe(){    };
+    public Recipe(){ };
 
     public Recipe(String name, ArrayList<Product> details, String text) {
         this.name = name;
@@ -60,10 +58,14 @@ public class Recipe implements Serializable, Period {
     }
 
     public ArrayList<String> getCategories() {
-        return category;
+        return this.category;
     }
 
     public void addCategory(String category) {
         this.category.add(category);
     }
+
+
+    /////////////////////////////////////////////////////////////////
+
 }

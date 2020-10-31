@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public class WeekSchedule implements Serializable {
 
-    private final DayShedule[] schedule;
+    private final DaySchedule[] schedule;
 
     public WeekSchedule() {
-        schedule = new DayShedule[7];
+        schedule = new DaySchedule[7];
     }
 
-    public void updateDAY(DayShedule d, int pos) {
+    public void updateDAY(DaySchedule d, int pos) {
         this.schedule[pos] = d;
     }
 
-    public DayShedule getDAY(int pos){
+    public DaySchedule getDAY(int pos){
         return schedule[pos];
     }
 

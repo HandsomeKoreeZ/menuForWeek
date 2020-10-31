@@ -84,10 +84,11 @@ public class DBConst {
             "PRIMARY KEY ("+COL_REC_ID+","+COL_PROD_ID+"))";
 
     public static final String CREATE_DAY_TABLE = "CREATE TABLE " + TAB_DAY+ " ("+
-            COL_ID+" int primary key, " +
+            COL_ID + " int UNIQUE,"+
             COL_NAME+" text," +
             COL_PERIOD_ID + " int," +
             COL_REC_ID +" int,"+
+            "PRIMARY KEY ("+COL_NAME+","+COL_PERIOD_ID+"),"+
             "FOREIGN KEY("+COL_PERIOD_ID+") REFERENCES " +TAB_PERIOD+" ("+COL_ID+"), "+
             "FOREIGN KEY("+COL_REC_ID+") REFERENCES " +TAB_RECIPE+" ("+COL_ID+"))";
 

@@ -6,14 +6,11 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.drawable.shapes.OvalShape;
 
 import androidx.annotation.Nullable;
 
 import com.example.menuforweek.Entities.*;
 import com.example.menuforweek.Interface.Product;
-
-import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String basename = "WEEKMENUBAZA";
@@ -44,10 +41,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void initialize(){
         SQLiteDatabase db = this.getWritableDatabase();
-        DBFillers.productCategoryList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
-        DBFillers.mealPeriodList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
-        DBFillers.volumeCategoriesList().forEach((ContentValues cv)->db.insert(DBConst.TAB_PROD_CAT,null,cv));
-        DBFillers.recipeCategoryList().forEach((ContentValues cv)-> db.insert(DBConst.TAB_PROD_CAT,null,cv));
+        DBFillers.fillContentList(DBFillers.getListProductCategory(),DBConst.COL_NAME).forEach((ContentValues cv)->System.out.println(db.insert(DBConst.TAB_PROD_CAT,null,cv)));
+        DBFillers.fillContentList(DBFillers.getListPeriod(),DBConst.COL_NAME).forEach((ContentValues cv)->db.insert(DBConst.TAB_PERIOD,null,cv));
+        DBFillers.fillContentList(DBFillers.getListVolumeCategories(),DBConst.COL_NAME).forEach((ContentValues cv)->db.insert(DBConst.TAB_VOL,null,cv));
+        DBFillers.fillContentList(DBFillers.getListRecipeCategory(),DBConst.COL_NAME).forEach((ContentValues cv)-> db.insert(DBConst.TAB_REC_CATEGORY,null,cv));
     }
 
 
@@ -196,6 +193,48 @@ public class DBHelper extends SQLiteOpenHelper {
         return recipe;
     }
 
+    public void updateDay(DaySchedule day ){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int periodID;
+        ContentValues cv;
+
+        for(Meal m: day.getDayschedule() ){
+                cv = new ContentValues();
+                cv.put(DBConst.COL_ID,day.getId());
+                cv.put(DBConst.COL_NAME,day.getName());
+                periodID = getIDfrom(DBConst.TAB_PERIOD, m.getPeriod());
+                cv.put(DBConst.COL_PERIOD_ID,periodID);
+                cv.put(DBConst.COL_REC_ID, m.getDish().getId());
+                db.replace(DBConst.TAB_DAY,null,cv);
+        }
+    }
+
+
+    public DaySchedule getDay(String name){
+        //TODO возвращаемый элемент без ID
+        SQLiteDatabase db = this.getReadableDatabase();
+        DaySchedule day = new DaySchedule();
+        Meal meal;
+        Recipe recipe;
+        String period;
+        int idPeriod, idRecipe;
+        String sql = "SELECT * FROM "+DBConst.TAB_DAY + " WHERE "+ DBConst.COL_NAME +  " = " + name;
+
+        day.setName(name);
+        Cursor cursor = db.rawQuery(sql,null);
+        do{
+            idPeriod = cursor.getInt(cursor.getColumnIndex(DBConst.COL_PERIOD_ID));
+            period = getTextFrom(DBConst.TAB_PERIOD,DBConst.COL_NAME,idPeriod);
+            idRecipe = cursor.getInt(cursor.getColumnIndex(DBConst.COL_REC_ID));
+            recipe = getRecipe(idRecipe);
+            meal = new Meal(period,recipe);
+            day.addMeal(meal);
+        }while (cursor.moveToNext());
+
+        return day;
+    }
+
+
     private void setProductToDetail(int id_rec, Product product, SQLiteDatabase db){
         ContentValues cv = new ContentValues();
         Product_Full product_full = (Product_Full) product;
@@ -210,18 +249,6 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(DBConst.COL_REC_ID,id_rec);
         cv.put(DBConst.COL_CAT_ID,id_cat);
         db.insert(DBConst.TAB_REC_CAT_INTERS,null, cv);
-    }
-
-
-
-
-
-    public void insertDay(DayShedule day ){
-
-    }
-
-    public DayShedule getDay(int id){
-
     }
 
 
