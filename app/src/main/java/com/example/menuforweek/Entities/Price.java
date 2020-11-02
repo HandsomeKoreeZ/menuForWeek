@@ -16,9 +16,9 @@ public class Price implements Serializable {
 
     public Price() {}
 
-    public Price(Product_raw prod, int volume, Double value) {
+    public Price(Product_raw prod, String volType, int volume, Double value) {
         this.prod = prod;
-        this.volType = prod.getVolType();
+        this.volType = volType;
         this.volume = volume;
         this.value = value;
     }

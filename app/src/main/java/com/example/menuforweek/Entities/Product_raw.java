@@ -8,13 +8,11 @@ public class Product_raw implements Serializable, Product {
 
     private int id;
     private String prodCategory;
-    private String volType;
     private String name;
 
     public Product_raw() {}
-    public Product_raw(String prodCategory, String volType, String name) {
+    public Product_raw(String prodCategory, String name) {
         this.prodCategory = prodCategory;
-        this.volType = volType;
         this.name = name;
     }
 
@@ -36,16 +34,6 @@ public class Product_raw implements Serializable, Product {
     @Override
     public void setProdCategory(String prodCategoryID) {
         this.prodCategory = prodCategoryID;
-    }
-
-    @Override
-    public String getVolType() {
-        return volType;
-    }
-
-    @Override
-    public void setVolType(String volID) {
-        this.volType = volID;
     }
 
     @Override

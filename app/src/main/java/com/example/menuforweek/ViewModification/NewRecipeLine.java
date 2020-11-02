@@ -4,12 +4,18 @@ import android.content.Context;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
+import com.example.menuforweek.Database.DBAdapter;
 import com.example.menuforweek.R;
+import com.example.menuforweek.Service.VolumeSpinnerListener;
 import com.example.menuforweek.Service.minusComponentLineListener;
+
+import java.util.Objects;
 
 
 public class NewRecipeLine extends LinearLayout{
@@ -24,6 +30,7 @@ public class NewRecipeLine extends LinearLayout{
         name.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,(float)0.5));
         this.addView(name);
         this.addView(createEditText(context,R.string.newComponentVolumeHint));
+        this.addView(createSpinner(context));
 
         Button minus = createButton(context,R.string.symbol_minus,getResources().getColor(R.color.button_minus,null));
         OnClickListener clickMinus = new minusComponentLineListener(context,parent,this);
@@ -59,6 +66,21 @@ public class NewRecipeLine extends LinearLayout{
         bb.setGravity(Gravity.CENTER);
         bb.setTextSize(24);
         return bb;
+    }
+
+    private Spinner createSpinner(Context context){
+        Spinner spinner = new Spinner(context);
+        DBAdapter db = DBAdapter.getInstance();
+        spinner.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,(float)0.2));
+        spinner.setGravity(Gravity.CENTER);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()),android.R.layout.simple_spinner_item,  db.getVolumeTypeList());
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new VolumeSpinnerListener());
+
+
+
+        return spinner;
     }
 
 

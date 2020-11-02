@@ -42,12 +42,12 @@ public class Product_Full implements Serializable, Product {
         this.prodCategory=category;
     }
 
-    @Override
+
     public String getVolType() {
         return this.volType;
     }
 
-    @Override
+
     public void setVolType(String volType) {
         this.volType = volType;
     }

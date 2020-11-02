@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
@@ -28,7 +29,8 @@ public class Fragment_detail_recipe extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Spinner spinner;
-    DBAdapter db;
+    private DBAdapter db;
+    private Button saveButton;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -88,6 +90,10 @@ public class Fragment_detail_recipe extends Fragment {
 
         obs.findViewById(R.id.p1).setOnClickListener(clickPlus);
         //obs.findViewById(R.id.m1).setOnClickListener(clickMinus);
+
+        //кнопка сохранения рецепта и последующее его сохранение
+        saveButton = obs.findViewById(R.id.buttonSaveRecipe);
+
 
         return obs;
     }

@@ -53,9 +53,8 @@ public class DBConst {
             COL_ID +" int  primary key," +
             COL_NAME+" text,"+
             COL_CAT_ID+" int," +
-            COL_VOL_ID+" int,"+
-            "FOREIGN KEY("+COL_CAT_ID+") REFERENCES " +TAB_PROD_CAT+" ("+COL_ID+")," +
-            "FOREIGN KEY("+COL_VOL_ID+") REFERENCES " +TAB_VOL+" ("+COL_ID+"))";
+            "FOREIGN KEY("+COL_CAT_ID+") REFERENCES " +TAB_PROD_CAT+" ("+COL_ID+"))";
+
 
     public static final String CREATE_PRICE = "CREATE TABLE " + TAB_PRICE+" (" +
             COL_ID+ " int primary key," +
@@ -78,9 +77,11 @@ public class DBConst {
     public static final String CREATE_DETAIL = "CREATE TABLE "+TAB_REC_DETAIL+ " ( "+
             COL_REC_ID+ " int," +
             COL_PROD_ID+" int," +
+            COL_VOL_ID+" int,"+
             COL_VOL + " int," +
             "FOREIGN KEY("+COL_REC_ID+") REFERENCES " +TAB_RECIPE+" ("+COL_ID+"), "+
             "FOREIGN KEY("+COL_PROD_ID+") REFERENCES " +TAB_PROD+" ("+COL_ID+"), "+
+            "FOREIGN KEY("+COL_VOL_ID+") REFERENCES " +TAB_VOL+" ("+COL_ID+"), "+
             "PRIMARY KEY ("+COL_REC_ID+","+COL_PROD_ID+"))";
 
     public static final String CREATE_DAY_TABLE = "CREATE TABLE " + TAB_DAY+ " ("+

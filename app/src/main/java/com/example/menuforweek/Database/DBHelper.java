@@ -91,11 +91,9 @@ public class DBHelper extends SQLiteOpenHelper {
     public void insertRawProduct(Product product){
         SQLiteDatabase db = this.getWritableDatabase();
         String name = product.getName();
-        int volID = getIDfrom(DBConst.TAB_VOL, product.getVolType());
         int catID = getIDfrom(DBConst.TAB_PROD_CAT, product.getProdCategory());
         ContentValues cv = new ContentValues();
         cv.put(DBConst.COL_NAME,name);
-        cv.put(DBConst.COL_VOL_ID,volID);
         cv.put(DBConst.COL_CAT_ID,catID);
         db.insert(DBConst.TAB_PROD,null,cv);
         db.close();
@@ -104,7 +102,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public Product getRawProduct(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         Product_raw product = null;
-        int id_vol;
         int id_cat;
         String prodName;
         String sql = "select * from "+DBConst.TAB_PROD+" where " + DBConst.COL_ID+"="+id;
@@ -115,7 +112,6 @@ public class DBHelper extends SQLiteOpenHelper {
         try {
             // gathering information from database
             id_cat = cursor.getInt(cursor.getColumnIndex(DBConst.COL_CAT_ID));
-            id_vol = cursor.getInt(cursor.getColumnIndex(DBConst.COL_VOL_ID));
             prodName = cursor.getString(cursor.getColumnIndex(DBConst.COL_NAME));
             cursor.close();
             db.close();
@@ -125,7 +121,6 @@ public class DBHelper extends SQLiteOpenHelper {
             product.setID(id);
             product.setName(prodName);
             product.setProdCategory(getTextFrom(DBConst.TAB_PROD_CAT, DBConst.COL_NAME, id_cat));
-            product.setVolType(getTextFrom(DBConst.TAB_VOL,DBConst.COL_NAME, id_vol));
         } catch (Exception e) {
             System.out.println("------------------------------------------> doesn't exist product");
         }
@@ -211,7 +206,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     public DaySchedule getDay(String name){
-        //TODO возвращаемый элемент без ID
+        // возвращаемый элемент без ID
         SQLiteDatabase db = this.getReadableDatabase();
         DaySchedule day = new DaySchedule();
         Meal meal;
@@ -235,11 +230,18 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////
+    //methods for internal use
+
     private void setProductToDetail(int id_rec, Product product, SQLiteDatabase db){
         ContentValues cv = new ContentValues();
         Product_Full product_full = (Product_Full) product;
         cv.put(DBConst.COL_REC_ID,id_rec);
         cv.put(DBConst.COL_PROD_ID, product_full.getID());
+        cv.put(DBConst.COL_VOL_ID,product_full.getVolType());
         cv.put(DBConst.COL_VOL, product_full.getVolume());
         db.insert(DBConst.TAB_REC_DETAIL,null,cv);
     }
@@ -250,6 +252,7 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(DBConst.COL_CAT_ID,id_cat);
         db.insert(DBConst.TAB_REC_CAT_INTERS,null, cv);
     }
+
 
 
 
