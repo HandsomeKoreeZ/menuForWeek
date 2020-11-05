@@ -15,8 +15,7 @@ public class Product_Full implements Serializable, Product {
     public Product_Full(Product product, int volume){
         this.volume = volume;
     }
-    public Product_Full(String prodCategory, String volType, String name, int volume) {
-        this.prodCategory = prodCategory;
+    public Product_Full(String name, String volType, Integer volume) {
         this.volType = volType;
         this.name = name;
         this.volume=volume;

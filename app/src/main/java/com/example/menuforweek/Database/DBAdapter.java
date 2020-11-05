@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.ArrayAdapter;
 
+import com.example.menuforweek.Entities.Recipe;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,10 @@ public class DBAdapter {
     public List<String> getVolumeTypeList(){
         return DBFillers.getListVolumeCategories();
 
+    }
+
+    public void addRecipe(Recipe recipe){
+        db.insertRecipe(recipe);
     }
 
 

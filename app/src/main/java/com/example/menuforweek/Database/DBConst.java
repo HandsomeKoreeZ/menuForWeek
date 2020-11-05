@@ -61,7 +61,7 @@ public class DBConst {
             COL_PROD_ID +" int, "+
             COL_VOL_ID + " int, " +
             COL_VOL + " int," +
-            COL_VAL + " real)" +
+            COL_VAL + " real," +
             "FOREIGN KEY("+COL_PROD_ID+") REFERENCES " +TAB_PROD+" ("+COL_ID+")," +
             "FOREIGN KEY("+COL_VOL_ID+") REFERENCES " +TAB_VOL+" ("+COL_ID+"))";
 

@@ -153,6 +153,7 @@
 
                 <LinearLayout
                     android:id="@+id/ll1"
+                    android:tag="ll1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
@@ -161,6 +162,7 @@
 
 
                     <EditText
+                        android:tag="tagName1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -170,16 +172,18 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:tag="tagVolumeValue1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
                         android:gravity="center"
                         android:hint="@string/newComponentVolumeHint"
-                        android:inputType="textPersonName"
+                        android:inputType="numberDecimal"
                         android:textSize="16sp" />
 
                     <Spinner
                         android:id="@+id/volSpinner1"
+                        android:tag="tagSpinner1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"

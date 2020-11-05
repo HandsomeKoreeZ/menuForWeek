@@ -61,6 +61,10 @@ public class Recipe implements Serializable {
         return this.category;
     }
 
+    public void setCategories(ArrayList<String> category) {
+        this.category = category;
+    }
+
     public void addCategory(String category) {
         this.category.add(category);
     }

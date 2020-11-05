@@ -1,20 +1,35 @@
 package com.example.menuforweek.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.example.menuforweek.Database.DBAdapter;
+import com.example.menuforweek.Entities.Product_Full;
+import com.example.menuforweek.Entities.Recipe;
+import com.example.menuforweek.Interface.Product;
 import com.example.menuforweek.R;
 import com.example.menuforweek.Service.VolumeSpinnerListener;
 import com.example.menuforweek.Service.plusConponentLineListener;
+import com.example.menuforweek.Service.saveButtonListener;
+import com.example.menuforweek.ViewModification.NewRecipeLine;
+import com.example.menuforweek.databinding.ActivityMainBinding;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -24,10 +39,6 @@ import java.util.Objects;
  */
 public class Fragment_detail_recipe extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private Spinner spinner;
     private DBAdapter db;
     private Button saveButton;
@@ -44,16 +55,12 @@ public class Fragment_detail_recipe extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment Fragment_detail_recipe.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_detail_recipe newInstance(String param1, String param2) {
+    public static Fragment_detail_recipe newInstance() {
         Fragment_detail_recipe fragment = new Fragment_detail_recipe();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -62,16 +69,13 @@ public class Fragment_detail_recipe extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = DBAdapter.getInstance();
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View obs = inflater.inflate(R.layout.fragment_detail_recipe, container, false);
+
 
         //поиск нужных вьюшек
         LinearLayout parentLL = obs.findViewById(R.id.linearLayout_componentsList);
@@ -93,8 +97,10 @@ public class Fragment_detail_recipe extends Fragment {
 
         //кнопка сохранения рецепта и последующее его сохранение
         saveButton = obs.findViewById(R.id.buttonSaveRecipe);
-
+        View.OnClickListener clickSave = new saveButtonListener(getContext(),obs);
+        saveButton.setOnClickListener(clickSave);
 
         return obs;
     }
+
 }

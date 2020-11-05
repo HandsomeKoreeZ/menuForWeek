@@ -24,15 +24,15 @@ public class DBFillers {
 
     public static List<String> getListRecipeCategory(){
         List<String> list = new ArrayList<>();
-        list.add("завтрак");
-        list.add("гарнир");
-        list.add("основное блюдо");
-        list.add("салат");
-        list.add("мясо");
-        list.add("рыба");
-        list.add("суп");
-        list.add("десерт");
-        list.add("разное");
+        list.add("Завтрак");
+        list.add("Гарнир");
+        list.add("Основное блюдо");
+        list.add("Салат");
+        list.add("Мясо");
+        list.add("Рыба");
+        list.add("Суп");
+        list.add("Десерт");
+        list.add("Разное");
         return list;
     }
 

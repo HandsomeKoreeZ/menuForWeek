@@ -26,21 +26,20 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL(DBConst.CREATE_PROD_CAT);
             db.execSQL(DBConst.CREATE_REC_CAT);
             db.execSQL(DBConst.CREATE_VOLUME);
+            db.execSQL(DBConst.CREATE_RECIPE);
             db.execSQL(DBConst.CREATE_PERIOD);
             db.execSQL(DBConst.CREATE_PRODUCTS);
             db.execSQL(DBConst.CREATE_PRICE);
-            db.execSQL(DBConst.CREATE_RECIPE);
             db.execSQL(DBConst.CREATE_REC_CAT_INTERS);
             db.execSQL(DBConst.CREATE_DETAIL);
             db.execSQL(DBConst.CREATE_DAY_TABLE);
-            initialize();
+            initialize(db);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void initialize(){
-        SQLiteDatabase db = this.getWritableDatabase();
+    private void initialize(SQLiteDatabase db){
         DBFillers.fillContentList(DBFillers.getListProductCategory(),DBConst.COL_NAME).forEach((ContentValues cv)->System.out.println(db.insert(DBConst.TAB_PROD_CAT,null,cv)));
         DBFillers.fillContentList(DBFillers.getListPeriod(),DBConst.COL_NAME).forEach((ContentValues cv)->db.insert(DBConst.TAB_PERIOD,null,cv));
         DBFillers.fillContentList(DBFillers.getListVolumeCategories(),DBConst.COL_NAME).forEach((ContentValues cv)->db.insert(DBConst.TAB_VOL,null,cv));
@@ -137,14 +136,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String text = recipe.getText();
         cv.put(DBConst.COL_NAME,name);
         cv.put(DBConst.COL_REC_TEXT,text);
-        db.insert(DBConst.TAB_RECIPE,null,cv);
-
-        //recieve ID that inserted
-        String sql = "select last_insert_rowid()";
-        Cursor cursor = db.rawQuery(sql, null);
-        cursor.moveToFirst();
-        id_rec = cursor.getInt(cursor.getColumnIndex((DBConst.COL_ID)));
-        cursor.close();
+        id_rec = (int) db.insert(DBConst.TAB_RECIPE,null,cv);
 
         //insert all products to the details
         recipe.getDetails().forEach((prod)-> setProductToDetail(id_rec,prod,db));

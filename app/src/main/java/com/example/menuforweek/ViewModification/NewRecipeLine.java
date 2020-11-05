@@ -22,14 +22,19 @@ public class NewRecipeLine extends LinearLayout{
     private final LinearLayout.LayoutParams small = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, (float) 0.3);
     private final LinearLayout.LayoutParams large = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     private static Integer lines = 1;
+    public static final String tagName = "tagName";
+    public static final String tagVolumeValue = "tagVolumeValue";
+    public static final String tagSpinner = "tagSpinner";
+    public static final String tagLL = "ll";
 
     public NewRecipeLine(Context context, LinearLayout parent) {
         super(context);
         normalize();
-        EditText name = createEditText(context,R.string.newComponentHint);
+        this.setTag(tagLL+lines);
+        EditText name = createEditText(context,R.string.newComponentHint,tagName, InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         name.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,(float)0.5));
         this.addView(name);
-        this.addView(createEditText(context,R.string.newComponentVolumeHint));
+        this.addView(createEditText(context,R.string.newComponentVolumeHint,tagVolumeValue,InputType.TYPE_CLASS_NUMBER));
         this.addView(createSpinner(context));
 
         Button minus = createButton(context,R.string.symbol_minus,getResources().getColor(R.color.button_minus,null));
@@ -45,12 +50,13 @@ public class NewRecipeLine extends LinearLayout{
         NewRecipeLine.lines++;
     }
 
-    private EditText createEditText(Context context, int hint){
+    private EditText createEditText(Context context, int hint, String tag, int inputType){
         EditText et = new EditText(context);
+        et.setTag(tag+lines);
         et.setLayoutParams(small);
         et.setHint(hint);
         et.setGravity(Gravity.CENTER);
-        et.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
+        et.setInputType(inputType);
         et.setTextSize(16);
 
         return et;
@@ -72,11 +78,13 @@ public class NewRecipeLine extends LinearLayout{
         Spinner spinner = new Spinner(context);
         DBAdapter db = DBAdapter.getInstance();
         spinner.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,(float)0.2));
+        spinner.setTag(tagSpinner+lines);
         spinner.setGravity(Gravity.CENTER);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Objects.requireNonNull(getContext()),android.R.layout.simple_spinner_item,  db.getVolumeTypeList());
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(new VolumeSpinnerListener());
+
 
 
 
