@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="transparent">#0000</color>
+    <color name="button_plus">#226A00</color>
+    <color name="button_minus">#D10E00</color>
+    <color name="color_newRecipe">#FFE598</color>
+    <color name="color_menu">#E0FFD1</color>
+    <color name="color_productList">#E6F2FF</color>
+    <color name="color_coock">#E1C3DA</color>
+    <color name="color_productPrice">#FFE3E1</color>
+    <color name="edit_text_border">#FFC700</color>
+    <color name="textveiw_menuBorder">#5e9e52</color>
+    <color name="bottom_nav_menu_nav">#fefcff</color>
+</resources>

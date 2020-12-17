@@ -1,0 +1,48 @@
+<resources>
+    <!-- имена фреймов -->
+    <string name="app_name">menuForWeek</string>
+    <string name="title_add_recipe">Подробности</string>
+    <string name="title_menu_list">Меню</string>
+    <string name="title_product_list">Список</string>
+    <string name="title_cook">Рецепты</string>
+    <string name="title_product_price">Цены</string>
+
+    <!-- категории блюд -->
+    <string name="category_breakfast">Завтрак</string>
+    <string name="category_garnish">Гарнир</string>
+    <string name="category_mainPlate">Основное блюдо</string>
+    <string name="category_salad">Салат</string>
+    <string name="category_dessert">Десерт</string>
+    <string name="category_fish">Рыба</string>
+    <string name="category_meat">Мясо</string>
+    <string name="category_soup">Суп</string>
+    <string name="category_other">Прочее</string>
+
+    <!-- подсказки -->
+    <string name="newRecipeNameHint">Название блюда</string>
+    <string name="newComponentHint">Название ингридиента</string>
+    <string name="newComponentVolumeHint">Количество</string>
+    <string name="newRecipe">Напишите в этом поле ваше рецепт</string>
+    <string name="symbol_plus">+</string>
+    <string name="symbol_minus">—</string>
+
+    <!-- дни недели -->
+    <string name="mon">ПН</string>
+    <string name="tue">ВТ</string>
+    <string name="wed">СР</string>
+    <string name="thu">ЧТ</string>
+    <string name="fri">ПТ</string>
+    <string name="sat">СБ</string>
+    <string name="sun">ВС</string>
+
+    <!-- категории еды -->
+    <string name="zavtrak">Завтрак</string>
+    <string name="obed">Обед</string>
+    <string name="uzhin">Ужин</string>
+    <string name="desert">Десерт</string>
+    <string name="rabota">Работа</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

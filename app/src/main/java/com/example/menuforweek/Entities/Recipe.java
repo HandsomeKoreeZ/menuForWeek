@@ -53,7 +53,7 @@ public class Recipe implements Serializable {
         this.text = text;
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product_Full product){
         details.add(product);
     }
 

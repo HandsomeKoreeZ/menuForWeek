@@ -27,6 +27,7 @@ import com.example.menuforweek.Service.plusConponentLineListener;
 import com.example.menuforweek.Service.saveButtonListener;
 import com.example.menuforweek.ViewModification.NewRecipeLine;
 import com.example.menuforweek.databinding.ActivityMainBinding;
+import com.example.menuforweek.testObjects.testEntities;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -99,6 +100,10 @@ public class Fragment_detail_recipe extends Fragment {
         saveButton = obs.findViewById(R.id.buttonSaveRecipe);
         View.OnClickListener clickSave = new saveButtonListener(getContext(),obs);
         saveButton.setOnClickListener(clickSave);
+
+        //TODO
+        //remove this after test
+        db.addRecipe(testEntities.getPotatoPoure());
 
         return obs;
     }

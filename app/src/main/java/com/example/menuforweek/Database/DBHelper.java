@@ -87,13 +87,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return text;
     }
 
-    public void insertRawProduct(Product product){
+    public void insertRawProduct(Product_raw product){
         SQLiteDatabase db = this.getWritableDatabase();
         String name = product.getName();
-        int catID = getIDfrom(DBConst.TAB_PROD_CAT, product.getProdCategory());
         ContentValues cv = new ContentValues();
         cv.put(DBConst.COL_NAME,name);
-        cv.put(DBConst.COL_CAT_ID,catID);
         db.insert(DBConst.TAB_PROD,null,cv);
         db.close();
     }
@@ -119,7 +117,6 @@ public class DBHelper extends SQLiteOpenHelper {
             product = new Product_raw();
             product.setID(id);
             product.setName(prodName);
-            product.setProdCategory(getTextFrom(DBConst.TAB_PROD_CAT, DBConst.COL_NAME, id_cat));
         } catch (Exception e) {
             System.out.println("------------------------------------------> doesn't exist product");
         }
